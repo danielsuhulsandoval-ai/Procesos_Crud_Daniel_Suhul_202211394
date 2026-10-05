@@ -1,0 +1,84 @@
+/* ==== Escuela – Verde y Blanco ==== */
+:root {
+    --school-primary: #006400;   /* Verde oscuro */
+    --school-light:   #FFFFFF;   /* Blanco */
+}
+
+/* Fuente global */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--school-light);
+    color: #212529;
+}
+
+/* Botones – sobrescritura directa de .btn de Bootstrap */
+.btn {
+    border-radius: .45rem;
+    font-weight: 600;
+    transition: background-color .2s, color .2s, box-shadow .2s;
+}
+
+/* Botón "Editar" (verde) */
+.btn-primary {
+    background-color: var(--school-primary);
+    border-color: var(--school-primary);
+    color: var(--school-light);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #004d00;
+    border-color: #004d00;
+    box-shadow: 0 0 .5rem rgba(0,100,0,.4);
+}
+
+/* Botón "Eliminar" (blanco con borde verde) */
+.btn-danger {
+    background-color: var(--school-light);
+    border-color: var(--school-primary);
+    color: var(--school-primary);
+}
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #f0f0f0;
+    color: #003300;
+    box-shadow: 0 0 .5rem rgba(0,100,0,.2);
+}
+
+/* Botón "Nuevo" y cualquier .btn-success – verde */
+.btn-success {
+    background-color: var(--school-primary);
+    border-color: var(--school-primary);
+    color: var(--school-light);
+}
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #004d00;
+    border-color: #004d00;
+    box-shadow: 0 0 .5rem rgba(0,100,0,.4);
+}
+
+/* Tabla – estilo acorde al tema */
+.table {
+    background-color: rgba(0,100,0,.03);
+    border-color: rgba(0,100,0,.12);
+}
+.table thead th {
+    background-color: var(--school-primary);
+    color: var(--school-light);
+    border-bottom: 2px solid var(--school-primary);
+}
+
+/* Enlaces de navegación */
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--school-light);
+}
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #cddc39;
+}
+
+/* Otros ajustes visuales */
+.card, .modal-content {
+    border-radius: .75rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
