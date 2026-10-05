@@ -15,8 +15,15 @@
         <input type="text" name="nombre_depto" id="txt_nombre" class="form-control" value="<?= esc($departamento['nombre_depto'] ?? '') ?>" required>
     </div>
     <div class="mb-3">
-        <label for="txt_region" class="form-label">Región ID</label>
-        <input type="number" name="cod_region" id="txt_region" class="form-control" value="<?= esc($departamento['cod_region'] ?? '') ?>" required>
+        <label for="txt_region" class="form-label">Región</label>
+        <select name="cod_region" id="txt_region" class="form-select" required>
+            <option value="" disabled <?= empty($departamento['cod_region'] ?? '') ? 'selected' : '' ?>>Selecciona una región</option>
+            <?php foreach ($regiones ?? [] as $region): ?>
+                <option value="<?= $region['cod_region'] ?>" <?= (isset($departamento['cod_region']) && $departamento['cod_region'] == $region['cod_region']) ? 'selected' : '' ?>>
+                    <?= esc($region['nombre']) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
     </div>
     <button type="submit" class="btn btn-primary">Guardar</button>
     <a href="<?= base_url('departamentos') ?>" class="btn btn-secondary ms-2">Cancelar</a>

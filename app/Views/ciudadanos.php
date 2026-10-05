@@ -16,7 +16,7 @@
 .table tbody td {
     background-color: var(--school-light);
 }
-.table {background-color: #e0f7fa;}
+.table {background-color: var(--school-light);}
 </style>
 <a href="<?= base_url('ciudadanos/create') ?>" class="btn btn-primary mb-3">Nuevo ciudadano</a>
 <table class="table table-striped table-hover">

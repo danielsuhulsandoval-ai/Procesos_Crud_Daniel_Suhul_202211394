@@ -1,13 +1,13 @@
-/* ==== Escuela – Verde y Blanco ==== */
+/* ==== Tema Azul – Blanco ==== */
 :root {
-    --school-primary: #006400;   /* Verde oscuro */
-    --school-light:   #FFFFFF;   /* Blanco */
+    --primary-color: #1e90ff;   /* Azul Dodger */
+    --light-color:   #FFFFFF;   /* Blanco */
 }
 
 /* Fuente global */
 body {
     font-family: 'Lato', sans-serif;
-    background-color: var(--school-light);
+    background-color: var(--light-color);
     color: #212529;
 }
 
@@ -18,63 +18,63 @@ body {
     transition: background-color .2s, color .2s, box-shadow .2s;
 }
 
-/* Botón "Editar" (verde) */
+/* Botón "Editar" (azul) */
 .btn-primary {
-    background-color: var(--school-primary);
-    border-color: var(--school-primary);
-    color: var(--school-light);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--light-color);
 }
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: #004d00;
-    border-color: #004d00;
-    box-shadow: 0 0 .5rem rgba(0,100,0,.4);
+    background-color: #187bcd; /* Azul más oscuro */
+    border-color: #187bcd;
+    box-shadow: 0 0 .5rem rgba(30,144,255,.4);
 }
 
-/* Botón "Eliminar" (blanco con borde verde) */
+/* Botón "Eliminar" (blanco con borde azul) */
 .btn-danger {
-    background-color: var(--school-light);
-    border-color: var(--school-primary);
-    color: var(--school-primary);
+    background-color: var(--light-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 }
 .btn-danger:hover,
 .btn-danger:focus {
     background-color: #f0f0f0;
-    color: #003300;
-    box-shadow: 0 0 .5rem rgba(0,100,0,.2);
+    color: #0d5aa7; /* Azul más oscuro */
+    box-shadow: 0 0 .5rem rgba(30,144,255,.2);
 }
 
-/* Botón "Nuevo" y cualquier .btn-success – verde */
+/* Botón "Nuevo" y cualquier .btn-success – azul */
 .btn-success {
-    background-color: var(--school-primary);
-    border-color: var(--school-primary);
-    color: var(--school-light);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--light-color);
 }
 .btn-success:hover,
 .btn-success:focus {
-    background-color: #004d00;
-    border-color: #004d00;
-    box-shadow: 0 0 .5rem rgba(0,100,0,.4);
+    background-color: #187bcd;
+    border-color: #187bcd;
+    box-shadow: 0 0 .5rem rgba(30,144,255,.4);
 }
 
 /* Tabla – estilo acorde al tema */
 .table {
-    background-color: rgba(0,100,0,.03);
-    border-color: rgba(0,100,0,.12);
+    background-color: var(--light-color);
+    border-color: var(--primary-color);
 }
 .table thead th {
-    background-color: var(--school-primary);
-    color: var(--school-light);
-    border-bottom: 2px solid var(--school-primary);
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-bottom: 2px solid var(--primary-color);
 }
 
 /* Enlaces de navegación */
 .navbar-dark .navbar-nav .nav-link {
-    color: var(--school-light);
+    color: var(--primary-color);
 }
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus {
-    color: #cddc39;
+    color: #187bcd;
 }
 
 /* Otros ajustes visuales */

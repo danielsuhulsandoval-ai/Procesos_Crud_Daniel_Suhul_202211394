@@ -10,6 +10,6 @@ class DepartamentoModel extends Model
     protected $primaryKey = 'cod_depto';
     protected $allowedFields = ['nombre_depto', 'cod_region'];
     protected $returnType = 'array';
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
 }
 ?>

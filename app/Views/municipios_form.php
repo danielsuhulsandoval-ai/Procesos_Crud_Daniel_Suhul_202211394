@@ -10,8 +10,15 @@
 <h1 class="mb-4"><?= isset($municipio) ? 'Editar' : 'Crear' ?> Municipio</h1>
 <form action="<?= isset($municipio) ? base_url('municipios/update/' . esc($municipio['cod_muni'])) : base_url('municipios/store') ?>" method="post">
     <div class="mb-3">
-        <label for="cod_depto" class="form-label">Código Departamento</label>
-        <input type="number" name="cod_depto" id="cod_depto" class="form-control" value="<?= esc($municipio['cod_depto'] ?? '') ?>" required>
+        <label for="cod_depto" class="form-label">Departamento</label>
+        <select name="cod_depto" id="cod_depto" class="form-select" required>
+            <option value="" disabled selected>Seleccione Departamento</option>
+            <?php foreach ($departamentos as $dept): ?>
+                <option value="<?= esc($dept['cod_depto']) ?>" <?= isset($municipio) && $municipio['cod_depto'] == $dept['cod_depto'] ? 'selected' : '' ?>>
+                    <?= esc($dept['nombre_depto']) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
     </div>
     <div class="mb-3">
         <label for="nombre_municipio" class="form-label">Nombre Municipio</label>

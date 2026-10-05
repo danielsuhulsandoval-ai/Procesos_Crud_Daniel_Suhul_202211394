@@ -10,6 +10,6 @@ class MunicipioModel extends Model
     protected $primaryKey = 'cod_muni';
     protected $returnType = 'array';
     protected $allowedFields = ['cod_depto', 'nombre_municipio'];
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
 }
 ?>

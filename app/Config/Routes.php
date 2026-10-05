@@ -25,7 +25,7 @@ $routes->get('departamentos/create','DepartamentosController::create');
 $routes->post('departamentos/store','DepartamentosController::store');
 $routes->get('departamentos/edit/(:num)','DepartamentosController::edit/$1');
 $routes->post('departamentos/update/(:num)','DepartamentosController::update/$1');
-$routes->post('departamentos/delete/(:num)','DepartamentosController::delete/$1');
+$routes->post('departamentos/delete','DepartamentosController::delete');
 
 // CRUD routes for Municipios
 $routes->get('municipios','MunicipiosController::index');

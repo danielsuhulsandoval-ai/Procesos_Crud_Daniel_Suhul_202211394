@@ -22,14 +22,23 @@ class MunicipiosController extends BaseController
 
     public function create()
     {
-        return view('municipios_form');
+        $departamentos = (new \App\Models\DepartamentoModel())->findAll();
+        return view('municipios_form', ['departamentos' => $departamentos]);
     }
 
     public function store()
     {
+        $codDepto = $this->request->getPost('cod_depto');
+        if (empty($codDepto) || !is_numeric($codDepto)) {
+            return redirect()->back()->with('error', 'Seleccione un Departamento válido.');
+        }
+        $departamentoModel = new \App\Models\DepartamentoModel();
+        if (! $departamentoModel->find($codDepto)) {
+            return redirect()->back()->with('error', 'Departamento no encontrado.');
+        }
         $post = [
-            'departamento_id' => $this->request->getPost('departamento_id'),
-            'nombre' => $this->request->getPost('nombre')
+            'cod_depto' => (int) $codDepto,
+            'nombre_municipio' => $this->request->getPost('nombre_municipio')
         ];
         $this->municipioModel->insert($post);
         return redirect()->to('/municipios');
@@ -50,6 +59,10 @@ class MunicipiosController extends BaseController
 
     public function delete($id)
     {
+        $id = (int) $id;
+        if ($id <= 0) {
+            return redirect()->back()->with('error', 'ID de municipio no válido.');
+        }
         $this->municipioModel->delete($id);
         return redirect()->to('/municipios');
     }

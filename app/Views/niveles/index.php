@@ -6,7 +6,7 @@
   a:hover {color: #004d00;}
   .table thead th {background-color: var(--school-primary); color: var(--school-light);}
   .table tbody td {background-color: var(--school-light);}
-  .table {background-color: #e0f7fa;}
+  .table {background-color: var(--school-light);}
 </style>
     <h1>Niveles Académicos</h1>
     <a href="<?= base_url('niveles/create') ?>" class="btn btn-primary mb-3">Agregar Nivel</a>
